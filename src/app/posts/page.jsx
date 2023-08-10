@@ -5,6 +5,8 @@
  * [ ] Build a pagination page, that takes `page` slug
  */
 
+export const revalidate = false;
+
 import React from "react";
 import Head from "next/head";
 import getList from "../resources/list";
@@ -14,6 +16,7 @@ import Link from "next/link";
 
 const Home = async (props) => {
   const response = await getList();
+
   return (
     <>
       <div className="home-container">
@@ -26,9 +29,9 @@ const Home = async (props) => {
             return (
               <div key={item.id} style={{ margin: "16px" }}>
                 <Link href={`/posts/${item.id}`}>
-                  <h3>{item.Title}</h3>
+                  <h3>{item.title}</h3>
                 </Link>
-                <p>{item.Preview}</p>
+                <p>{item.shortDescription}</p>
                 <Author id={item.author.id} />
                 <DateTimePrimitive date={item.updatedAt} format="DD-MM-YYYY" />
               </div>

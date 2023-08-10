@@ -1,14 +1,14 @@
-import { normalize } from "@teleporthq/cms-mappers/strapi";
+import { normalize } from "@teleporthq/cms-mappers/contentful";
 
 export default async function (params = {}) {
   const urlParams = {
-    populate: "*",
+    content_type: "blogPost",
     ...(params["id"] && {
-      "filters[id][$eq]": params["id"],
+      "sys.id": params["id"],
     }),
   };
   const data = await fetch(
-    `${process.env.CMS_URL}/api/Posts?${new URLSearchParams(urlParams)}`,
+    `${process.env.CMS_URL}/entries?${new URLSearchParams(urlParams)}`,
     {
       method: "GET",
       headers: {
