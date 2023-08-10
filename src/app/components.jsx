@@ -1,3 +1,3 @@
-'use client'
+"use client";
 
-export { DateTimePrimitive } from '@teleporthq/react-components'
+export { DateTimePrimitive } from "@teleporthq/react-components";
