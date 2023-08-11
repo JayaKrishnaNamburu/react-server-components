@@ -1,3 +1,5 @@
+export const revalidate = false
+
 import getBlogDetails from '../../resources/blog-details'
 import { DateTimePrimitive } from '../../components'
 

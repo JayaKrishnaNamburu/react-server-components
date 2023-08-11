@@ -5,7 +5,7 @@
  * [ ] Build a pagination page, that takes `page` slug
  */
 
-export const revalidate = false;
+export const revalidate = 60;
 
 import React from "react";
 import Head from "next/head";
